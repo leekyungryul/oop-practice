@@ -2,8 +2,13 @@ package org.example;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.stream.Stream;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 /**
  * • 간단한 사칙연산을 할 수 있다.
@@ -13,21 +18,23 @@ import org.junit.jupiter.api.Test;
  */
 class CalculatorTest {
 
-    @DisplayName("덧셈 연산을 수행한다.")
-    @Test
-    void additionTest() {
+    @DisplayName("사칙연산을 수행한다.")
+    @ParameterizedTest
+    @MethodSource("formulaAndResult")
+    void calculateTest(int operand1, String operator, int operand2, int result) {
 
-        int result = Calculator.calculate(1, "+", 2);
+        int calculateResult = Calculator.calculate(operand1, operator, operand2);
 
-        assertThat(result).isEqualTo(3);
+        assertThat(calculateResult).isEqualTo(result);
+
     }
 
-    @DisplayName("뺄셈 연산을 수행한다.")
-    @Test
-    void minusTest() {
-
-        int result = Calculator.calculate(1, "-", 2);
-
-        assertThat(result).isEqualTo(-1);
+    private static Stream<Arguments> formulaAndResult() {
+        return Stream.of(
+                Arguments.of(1, "+", 2, 3),
+                Arguments.of(1, "-", 2, -1),
+                Arguments.of(4, "*", 2, 8),
+                Arguments.of(4, "/", 2, 2)
+        );
     }
 }
