@@ -1,13 +1,13 @@
-package org.example;
+package org.example.arithmetic;
 
 import java.util.List;
 
-import org.example.calculate.AdditionOperator;
-import org.example.calculate.DivisionOperator;
-import org.example.calculate.MultiplelicationOperator;
-import org.example.calculate.NewArithmeticOperator;
-import org.example.calculate.PositiveNumber;
-import org.example.calculate.SubtractionOperator;
+import org.example.arithmetic.calculate.AdditionOperator;
+import org.example.arithmetic.calculate.DivisionOperator;
+import org.example.arithmetic.calculate.MultiplelicationOperator;
+import org.example.arithmetic.calculate.NewArithmeticOperator;
+import org.example.arithmetic.calculate.PositiveNumber;
+import org.example.arithmetic.calculate.SubtractionOperator;
 
 public class Calculator {
 

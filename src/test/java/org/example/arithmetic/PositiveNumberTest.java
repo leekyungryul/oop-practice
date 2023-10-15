@@ -1,8 +1,8 @@
-package org.example;
+package org.example.arithmetic;
 
 import static org.assertj.core.api.Assertions.assertThatCode;
 
-import org.example.calculate.PositiveNumber;
+import org.example.arithmetic.calculate.PositiveNumber;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
